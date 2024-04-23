@@ -175,5 +175,4 @@ def bad_request(_):
     return make_response(jsonify({'error': 'Bad Request'}), 400)
 
 
-# if __name__ == '__main__':
-#     app.run(port=8040, host='127.0.0.1')
+app.run()
