@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main role="main" class="">
+  <div class="container roasting-3">
+      <h3 class="h3-1">Регионы</h3>
+      <p>Выбери свой регион, чтобы узнать какие животные в нём обитают.</p>
+	  <form method="post">
+	  <select name="input-select" id="input-select" class="select-o" onchange="printValue(this)">
+		  <option value="1">Республика Адыгея</option>
+		  <option value="2">Республика Алтай </option>
+		  <option value="3">Республика Башкортостан </option>
+		  <option value="4">Республика Бурятия </option>
+		  <option value="5">Республика Дагестан </option>
+		  <option value="7">Республика Ингушетия </option>
+		  <option value="8">Кабардино-Балкарская Республика</option>
+		  <option value="9">Республика Калмыкия </option>
+		  <option value="10">Карачаево-Черкесская Республика</option>
+		  <option value="11">Республика Карелия </option>
+		  <option value="12">Республика Коми </option>
+		  <option value="15">Республика Марий Эл </option>
+		  <option value="16">Республика Мордовия</option>
+		  <option value="17">Республика Саха (Якутия) </option>
+		  <option value="18">Республика Северная Осетия - Алания </option>
+		  <option value="19">Республика Татарстан</option>
+		  <option value="20">Республика Тыва </option>
+		  <option value="21">Удмуртская Республика </option>
+		  <option value="22">Республика Хакасия </option>
+		  <option value="23">Чеченская Республика</option>
+		  <option value="24">Чувашская Республика</option>
+		  <option value="25">Алтайский край</option>
+		  <option value="26">Забайкальский край</option>
+		  <option value="27">Камчатский край</option>
+		  <option value="28">Краснодарский край</option>
+		  <option value="29">Красноярский край</option>
+		  <option value="30">Пермский край</option>
+		  <option value="31">Приморский край</option>
+		  <option value="32">Ставропольский край</option>
+		  <option value="33">Хабаровский край</option>
+		  <option value="34">Амурская область</option>
+		  <option value="35">Архангельская область</option>
+		  <option value="36">Астраханская область</option>
+		  <option value="37">Белгородская область</option>
+		  <option value="38">Брянская область </option>
+		  <option value="39">Владимирская область </option>
+		  <option value="40">Волгоградская область </option>
+		  <option value="41">Вологодская область </option>
+		  <option value="42">Воронежская область </option>
+		  <option value="44">Ивановская область </option>
+		  <option value="45">Иркутская область </option>
+		  <option value="46">Калининградская область</option>
+		  <option value="47">Калужская область </option>
+		  <option value="48">Кемеровская область </option>
+		  <option value="49">Кировская область </option>
+		  <option value="50">Костромская область </option>
+		  <option value="51">Курганская область </option>
+		  <option value="52">Курская область </option>
+		  <option value="53">Ленинградская область </option>
+		  <option value="54">Липецкая область </option>
+		  <option value="55">Магаданская область</option>
+		  <option value="56">Московская область </option>
+		  <option value="57">Мурманская область </option>
+		  <option value="58">Нижегородская область </option>
+		  <option value="59">Новгородская область </option>
+		  <option value="60" selected>Новосибирская область </option>
+		  <option value="61">Омская область</option>
+		  <option value="62">Оренбургская область </option>
+		  <option value="63">Орловская область </option>
+		  <option value="64">Пензенская область </option>
+		  <option value="65">Псковская область </option>
+		  <option value="66">Ростовская область </option>
+		  <option value="67">Рязанская область </option>
+		  <option value="68">Самарская область </option>
+		  <option value="69">Саратовская область </option>
+		  <option value="70">Сахалинская область </option>
+		  <option value="71">Свердловская область </option>
+		  <option value="72">Смоленская область </option>
+		  <option value="73">Тамбовская область </option>
+		  <option value="74">Тверская область </option>
+		  <option value="75">Томская область </option>
+		  <option value="76">Тульская область</option>
+		  <option value="77">Тюменская область </option>
+		  <option value="78">Ульяновская область </option>
+		  <option value="80">Челябинская область </option>
+		  <option value="81">Ярославская область</option>
+		  <option value="82">Еврейская АО</option>
+		  <option value="83">Ненецкий АО</option>
+		  <option value="84">Ханты-Мансийский АО</option>
+		  <option value="85">Чукотский АО</option>
+		  <option value="86">Ямало-Ненецкий АО</option>
+		  <option value="6">Донецкая Народная Республика</option>
+		  <option value="13">Республика Крым</option>
+		  <option value="14">Луганская Народная Республика</option>
+		  <option value="43">Запорожская область</option>
+		  <option value="79">Херсонская область</option>
+	  </select>
+		  <button type="submit" class="btn btn-primary">Найти</button>
+	  </form>
+	  <h2>{{ region }}</h2>
+	  <br>
+	  <h3 class="h3-1">Животные:</h3>
+	  {% for name in animals %}
+	  <div class="col-md6 border rounded">
+		  {% if name == "Пусто" %}
+		  <a class="navbar-brand spectrum" href="#"><h3 class="h3-1">{{ name }}</h3></a>
+		  <div>
+			  {{ animals[name] }}
+		  </div>
+		  {% else %}
+		  <a class="navbar-brand spectrum" href="/animal_regions/{{ name }}"><h3 class="h3-1">{{ name }}</h3></a>
+		  <div>
+			  {{ animals[name] }}
+		  </div>
+		  {% endif %}
+	  </div>
+	  <br>
+	  {% endfor %}
+	  {% if current_user.is_authenticated %}
+	  <h3 class="h3-1">Тесты:</h3>
+	  {% for name in animals_test %}
+	  <div class="col-md6 border rounded">
+		  {% if name == "Пусто" %}
+		  <a class="navbar-brand spectrum" href="#"><h2>{{ name }}</h2></a>
+		  <div>
+			  {{ animals[name] }}
+		  </div>
+		  {% else %}
+		  <a class="navbar-brand spectrum" href="/animal_regions_test/{{ name }}"><h2>{{ name }}</h2></a>
+		  <div>
+			  {{ animals[name] }}
+		  </div>
+		  {% endif %}
+	  </div>
+	  <br>
+	  {% endfor %}
+	  {% else %}
+	  <h3 class="h3-1">Тесты:</h3>
+	  <h6 class="inoe"> Для доступа к тестам необходимо <a href="/login">авторизоваться</a>.</h6>
+	  {% endif %}
+  </div>
+</main>
+{% endblock %}

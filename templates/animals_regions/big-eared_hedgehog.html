@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main role="main" class="">
+  <div class="container roasting-3">
+      <h3 class="h3-1">{{ name }}</h3>
+<p>Выполните задания теста:</p>
+      <br>
+<p>К какому царству относится животное?  <input type="text" id="z_1"></p><br>
+<p>В период опасности они, как обычные ежи, могут свернуться в...  <input type="text" id="z_2"></p><br>
+<p>У зверька очень крупные <...> длиной 5 см.  <input type="text" id="z_3"></p><br>
+<button onclick="proverit();">Проверить</button><br>
+<div id="rezultat"></div>
+<script>
+function proverit(){
+pr_otv_zadachi_1 = "Животные";
+pr_otv_zadachi_2 = "Клубок";
+pr_otv_zadachi_3 = "уши";
+otv_uch_1 = document.getElementById('z_1').value;
+otv_uch_2 = document.getElementById('z_2').value;
+otv_uch_3 = document.getElementById('z_3').value;
+ball = 0;
+if(otv_uch_1 == pr_otv_zadachi_1){
+ball +=1;
+}
+if(otv_uch_2 == pr_otv_zadachi_2){
+ball +=1;
+}
+if(otv_uch_3 == pr_otv_zadachi_3){
+ball +=1;
+}
+vsego_zadach = 3;
+procent_vip = ball/vsego_zadach * 100;
+document.getElementById('rezultat').innerHTML = "Задания выполнены верно на "+procent_vip+"%.";
+}
+</script>
+  </div>
+</main>
+{% endblock %}

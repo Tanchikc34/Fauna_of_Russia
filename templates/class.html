@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main role="main" class="">
+  <div class="container roasting-3">
+	  <form method="post">
+      <h3 class="h3-1">Выбери свой класс</h3>
+      	  <select name="input-select" id="input-select" class="select-o">
+		  <option value="1-2">1 - 2 класс</option>
+		  <option value="3-4">3 - 4 класс</option>
+		  <option value="5-7">5 - 7 класс</option>
+		  <option value="8-9">8 - 9 класс</option>
+		  <option value="10-11">10 - 11 класс</option>
+	  </select>
+		  <button type="submit" class="btn btn-primary">Найти</button>
+	  </form>
+	  <h2>{{ class_id }}</h2>
+	  <br>
+      <h3 class="h3-1">Животные:</h3>
+	  {% for name in animals%}
+	  <div class="col-md6 border rounded">
+		  <a class="navbar-brand spectrum" href="/animal_class/{{ name }}"><h3 class="h3-1">{{ name }}</h3></a>
+		  <div>
+			  {{ animals[name] }}
+		  </div>
+	  </div>
+	  <br>
+	  {% endfor %}
+  </div>
+</main>
+{% endblock %}

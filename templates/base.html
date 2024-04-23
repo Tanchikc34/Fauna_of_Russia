@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <link type="text/css" href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Raleway:100,500,600,800' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>{{title}}</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg brown">
+        <div class="container-fluid">
+            <a class="navbar-brand p-0" href="/">
+                <img src="{{url_for('static', filename='img/logo_nav.svg')}}" alt="Logo" width="150" height="50" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse spectrum justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link active spectrum" aria-current="page" href="/">Главная</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link spectrum" href="/class">Классы</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link spectrum" href="/regions">Регионы</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="spectrum justify-content-end mx-5" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item mx-4">
+                            <a class="navbar-brand spectrum" href="/user/{{current_user.id}}">
+                                <img src="{{ url_for('static', filename='img/users_av/') }}{{ current_user.image }}" alt="" width="30" height="24" class="d-inline-block align-text-top rounded-circle">
+                                {{ current_user.name }}
+                            </a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link spectrum" href="/logout">Выйти</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle justify-content-end spectrum" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Аккаунт</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item spectrum-black" href="/login">Вход</a></li>
+                            <li><a class="dropdown-item spectrum-black" href="/register">Регистрация</a></li>
+                        </ul>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block content_header %}{% endblock %}
+</header>
+<!-- Begin page content -->
+{% block content %}{% endblock %}
+<footer class='brown-l'>
+    <a class="navbar-brand p-0 h6_a" href="#">
+        <img src="{{url_for('static', filename='img/logo_nav.svg')}}" alt="Logo" width="150" height="50" class="d-inline-block align-text-center">
+        © 2024 Афанасьева Татьяна и Емельянова Дарья
+    </a>
+</footer>
+</body>
+</html>

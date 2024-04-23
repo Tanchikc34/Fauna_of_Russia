@@ -1,0 +1,188 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a:hover {
+  color: #564564;
+}
+
+/** Header styles **/
+.header {
+  background-image: url(../img/bg_nav.png);
+  height: 862px;
+  width: 100%;
+}
+
+.bgs{
+  background-image: url(../img/bg_images.png);
+  height: 930px;
+  width: 100%;
+}
+
+.bgs2{
+  background-image: url(../img/bg_how.png);
+  height: 953px;
+  width: 100%;
+}
+
+.roasting {
+  margin: 90px auto 1080px;
+  padding: 20px 30px 40px 0px;
+  overflow: auto;
+  width: 90%;
+  border-radius: 4px;
+  align-self: center;
+}
+
+.roasting p {
+  color: #403529;
+  margin: 150px auto auto 220px;
+  text-align: center;
+  line-height: 28px;
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.roasting-3 {
+  margin: auto auto 800px;
+  padding: 20px 30px 40px 0px;
+  width: 90%;
+  align-self: left;
+}
+
+.roasting-3 p, div {
+  color: #403529;
+  margin: auto auto auto auto;
+  text-align: left;
+  line-height: 28px;
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.roasting-2 {
+  margin: 90px auto 1080px;
+  padding: 50px 30px 40px 0px;
+  width: 100%;
+  align-self: center;
+}
+
+.roasting-2 p {
+  color: #403529;
+  margin: 75px auto auto 40px;
+  text-align: left;
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+
+.spectrum {
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 24px;
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.spectrum-2 {
+  color: #000000;
+  text-align: center;
+  line-height: 24px;
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* Levels */
+.blue {
+  background-color: rgb(0, 0, 128);
+  color: r;
+
+}
+
+.brown {
+  background-color: #2c2014;
+}
+
+/* Typography */
+h1 {
+  color: #2c2014;
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 80px;
+  line-height: 76px;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  top: 20%;
+}
+
+h2 {
+  color: #2c2014;
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 38px;
+  font-weight: 500;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.h3-1 {
+  color: #2c2014;
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.h3-2 {
+  color: #554f3f;
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.h6_a {
+  color: #FFFFFF;
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.inoe {
+  color: #2c2014;
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.p_a {
+  color: #403529;
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+
+footer {
+  background-color: #9e9584;
+  height: 60px;
+  width: 100%;
+  text-align: center;
+}
+
+.select-o{
+  margin: 20px 20px 20px auto;
+  color: #403529;
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  text-align: center;
+}
